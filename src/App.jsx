@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import { CMSProvider } from './context/CMSContext';
 
@@ -27,7 +27,7 @@ function PageLoader() {
 export default function App() {
   return (
     <CMSProvider>
-      <BrowserRouter>
+      <HashRouter>
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* Dashboard / CMS Route */}
@@ -54,7 +54,7 @@ export default function App() {
             />
           </Routes>
         </Suspense>
-      </BrowserRouter>
+      </HashRouter>
     </CMSProvider>
   );
 }
