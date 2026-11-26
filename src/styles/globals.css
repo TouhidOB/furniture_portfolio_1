@@ -1,0 +1,71 @@
+@import './typography.css';
+@import './animations.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #F5F2EC;
+    color: #181818;
+  }
+
+  body {
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #72503C;
+    outline-offset: 3px;
+  }
+
+  /* Native Dialog Styling adhering to Modern Web Guidance */
+  dialog:modal {
+    overscroll-behavior: contain;
+    border: none;
+    padding: 0;
+    margin: auto;
+    background: transparent;
+  }
+
+  dialog::backdrop {
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background: rgba(24, 24, 24, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F2EC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D7C5AF;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A7A39C;
+}
+
+/* Three.js canvas container */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+}
